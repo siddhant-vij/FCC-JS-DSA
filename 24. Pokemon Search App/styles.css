@@ -1,0 +1,139 @@
+:root {
+  /* colors */
+  --primary-color: #ffffff;
+  --background-color: #0a0a23;
+  --button-color: #5a01a7;
+  --secondary-background-color: #f0f1f7;
+
+  /* font sizes */
+  --root-font-size: 16px;
+  font-size: var(--root-font-size);
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  background-color: var(--background-color);
+  color: var(--primary-color);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100%;
+}
+
+h1 {
+  font-size: 2.5rem;
+}
+
+.container {
+  background-color: var(--primary-color);
+  color: var(--background-color);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+  padding: 32px 80px;
+  border-radius: 32px;
+}
+
+.btn-ctn {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  width: 120%;
+}
+
+#search-input {
+  flex-grow: 2;
+  padding: 10px 20px;
+  border-radius: 32px;
+  border: 1px solid var(--background-color);
+  outline: none;
+}
+
+#search-input:focus {
+  border: 2px solid var(--button-color);
+}
+
+#search-button {
+  flex-grow: 1;
+  background-color: var(--button-color);
+  color: var(--primary-color);
+  border: none;
+  border-radius: 32px;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+#pokemon-info {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  border-radius: 32px;
+}
+
+#pokemon-card {
+  width: 120%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+  background-color: var(--secondary-background-color);
+}
+
+#name-id-ctn {
+  height: 1rem;
+}
+
+#weight-height-ctn {
+  height: 0.75rem;
+  font-size: 0.75rem;
+}
+
+#img-ctn {
+  height: 200px;
+  margin: 0 auto;
+}
+
+#sprite {
+  height: 100%;
+  width: auto;
+}
+
+#types {
+  height: 30px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+}
+
+#pokemon-stats {
+  width: 125%;
+}
+
+#pokemon-stats {
+  border-collapse: separate;
+  border-spacing: 4px 4px;
+}
+
+#pokemon-stats th, td {
+  text-align: center;
+  font-size: 1.125rem;
+  padding: 8px;
+  background-color: var(--button-color);
+  color: var(--primary-color);
+  border-radius: 4px;
+}
+
+#pokemon-stats td {
+  font-size: 1rem;
+}
