@@ -1,0 +1,63 @@
+<html>
+
+<head>
+    <style>
+        body {
+            text-align: center;
+        }
+        h1 {
+            color: rgb(101, 7, 239)
+        }
+        button {
+            cursor: pointer;
+            background-color: black;
+            color: white; 
+            width: 300px;
+            padding: 1em;
+            margin: 0.5em;
+        }
+    </style>
+    <title>DOM Access</title>
+</head>
+
+<body>
+    <h1>Test Yourself</h1>
+    <h2>getElementsByClassName()</h2>
+    <div>
+        <button onclick="green()" class="green">Click to change this to green</button>
+        <button onclick="blue()" class="blue">Click to change this to blue</button>
+        <button onclick="red()" class="red">Click to change this to red</button>
+        <button onclick="undo()" class="undo">Undo</button>
+    </div>
+    <script>
+        const greenBtn = document.getElementsByClassName("green");
+        const blueBtn = document.getElementsByClassName("blue");
+        const redBtn = document.getElementsByClassName("red");
+        
+        function green() {
+            greenBtn[0].style.backgroundColor = "green";
+            greenBtn[0].style.color = "black";
+        }
+
+        function blue() {
+            blueBtn[0].style.backgroundColor = "blue";
+            blueBtn[0].style.color = "white";        
+        }
+
+        function red() {
+            redBtn[0].style.backgroundColor = "red";
+            redBtn[0].style.color = "black";
+        }
+
+        function undo() {
+            redBtn[0].style.backgroundColor = "black";
+            redBtn[0].style.color = "white";
+            blueBtn[0].style.backgroundColor = "black";
+            blueBtn[0].style.color = "white";
+            greenBtn[0].style.backgroundColor = "black";
+            greenBtn[0].style.color = "white";
+        }
+    </script>
+</body>
+
+</html>
