@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HTMLCollection vs NodeList</title>
+</head>
+
+<body>
+
+  <h1>HTMLCollection vs NodeList</h1>
+
+  <li>BAM</li>
+  <li>POW</li>
+  <li>KAZAAM</li>
+
+  <script>
+
+    // The DOM NodeList is nearly the same as an HTMLCollection.
+    // Both of them reference HTML elements: an HTMLCollection is a collection of HTML elements, while a NodeList is a collection of various types of nodes.
+
+    // HTMLCollection vs NodeList
+    // HTMLCollection - contains only Element Nodes
+    // NodeList - contains all kinds of Nodes
+
+
+    
+    // They both have a length property to display the number of items in a collection, each of which can be accessed by their index number.
+    // However, in addition to that, HTMLCollection items can also be accessed by their name and ID.That is not the case with JavaScript NodeList.
+
+
+
+    // // HTMLCollection Demo - It's a live list
+    // const listItemsByTags = document.getElementsByTagName('li');
+    // console.log(listItemsByTags); // HTMLCollection(3) [li, li, li]
+    // console.log(listItemsByTags.length); // 3
+
+    // // Demo: Let's modify the DOM - add new list item
+    // const li = document.createElement('li');
+    // li.textContent = 'SOMETHING NEW';
+    // listItemsByTags[0].parentNode.appendChild(li);
+    // console.log(listItemsByTags); // HTMLCollection(4)[li, li, li, li]
+    // console.log(listItemsByTags.length); // 4
+
+
+    // NodeList Demo - It's a static list
+    let listItemsByQuery = document.querySelectorAll('li');
+    console.log(listItemsByQuery); // NodeList(3) [li, li, li]
+    console.log(listItemsByQuery.length); // 3
+
+    // Demo: Let's modify the DOM - add new list item
+    // The NodeList doesn't change, it's a static list
+    const li = document.createElement('li');
+    li.textContent = 'SOMETHING NEW';
+    listItemsByQuery[0].parentNode.appendChild(li);
+    console.log(listItemsByQuery); // NodeList(3)[li, li, li]
+    console.log(listItemsByQuery.length); // 3
+
+    // To update the NodeList, we have to requery the DOM
+    listItemsByQuery = document.querySelectorAll('li');
+    console.log(listItemsByQuery); // NodeList(4)[li, li, li, li]
+    console.log(listItemsByQuery.length); // 4
+
+  </script>
+
+</body>
+
+</html>
