@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ChildNodes vs Children</title>
+</head>
+
+<body>
+
+  <h1>ChildNodes vs Children</h1>
+  <p>ChildNodes returns all elements and text nodes in a list</p>
+  <p>Children returns only element nodes in a list</p>
+
+  <ul>
+    <li>Item-1</li>
+    <li>Item-2</li>
+    <li>Item-3</li>
+    <li>Item-4</li>
+    <li>Item-5</li>
+  </ul>
+
+  <script>
+    const list = document.querySelector("ul");
+
+    console.log(list.childNodes); // NodeList(11) [text, li, text, li, text, li, text, li, text, li, text]
+    console.log(list.childNodes.length); // 11
+
+    console.log(list.children); // HTMLCollection(5) [li, li, li, li, li]
+    console.log(list.children.length); // 5
+  </script>
+
+</body>
+
+</html>
