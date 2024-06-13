@@ -1,0 +1,27 @@
+html {
+    background: radial-gradient(grey, black);
+    color: white; 
+    padding-top: 50px;
+    text-align: center;
+}
+
+#main {
+    font-weight: bold;
+    font-size: 2em;
+}
+
+#wrapper {
+    width: 600px;
+    margin: 0 auto;
+}
+
+#circle {
+    background-color: #ff6347;
+    height: 600px;
+    border-radius: 100%;
+    margin-top: 20px;
+}
+
+#note {
+    margin-top: 2em;
+}
