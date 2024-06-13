@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Web Forms</title>
+</head>
+
+<body>
+  <h1>Web Forms</h1>
+  <h2>Without Web Forms</h2>
+  <label>Name: <input type="text" id="name-wo" /></label>
+  <br>
+  <label>Email: <input type="email" id="email-wo" /></label>
+  <br>
+  <input id="submit-btn-wo" type="button" value="Submit">
+  <div id="output"></div>
+
+  <h2>With Web Forms</h2>
+  <form>
+    <label>Name: <input type="text" id="name-w" /></label>
+    <br>
+    <label>Email: <input type="email" id="email-w" /></label>
+    <br>
+    <button id="submit-btn-w" type="submit">Submit</button>
+  </form>
+  <div id="web-form-output"></div>
+
+  <script>
+    const submitBtnWithoutWebForms = document.querySelector('#submit-btn-wo');
+    const output = document.querySelector('#output');
+    submitBtnWithoutWebForms.addEventListener('click', () => {
+      const name = document.querySelector('#name-wo').value;
+      const email = document.querySelector('#email-wo').value;
+      output.innerHTML = `Name: ${name}, Email: ${email}`;
+    });
+
+    const formElement = document.forms[0];
+    const webFormOutput = document.querySelector('#web-form-output');
+    formElement.addEventListener('submit', (e) => {
+      e.preventDefault(); // This is must to prevent browser from refresing the page.
+      const name = document.querySelector('#name-w').value;
+      const email = document.querySelector('#email-w').value;
+      webFormOutput.innerHTML = `Name: ${name}, Email: ${email}`;
+    });
+  </script>
+</body>
+
+</html>
