@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Inline Properties</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="content">
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Magni, natus eveniet? Nostrum dolorem voluptatibus
+            neque nesciunt voluptate, tempore laborum. Cupiditate, cum. Vitae, similique quibusdam sed sunt ea maiores
+            ipsam magni.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore at voluptatum labore distinctio
+            consectetur. Sunt, quia reprehenderit eveniet eaque corporis velit, quidem temporibus labore repellendus
+            illo sed, cupiditate optio facilis.</p>
+    </div>
+
+    <a id="show-more">Press Me and Show More</a>
+
+    <script>
+        const aTag = document.querySelector('#show-more');
+        aTag.onclick = () => {
+            document.querySelector('.content').classList.toggle('full-height');
+            aTag.textContent = aTag.textContent === 'Press Me and Show More' ? 'Press Me and Show Less' : 'Press Me and Show More';
+        };
+    </script>
+
+</body>
+
+</html>
