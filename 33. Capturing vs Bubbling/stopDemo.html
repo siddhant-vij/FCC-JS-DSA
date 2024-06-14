@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stop Demo: Stop Propagation</title>
+</head>
+
+<body>
+  <div id="three-a">
+    <button id="button1">Button One</button>
+  </div>
+  <script>
+    let button1 = document.querySelector("#button1");
+    button1.addEventListener("click", clickHandler, true);
+    button1.addEventListener("click", clickHandler, false);
+
+    let threeA = document.querySelector("#three-a");
+    threeA.addEventListener("click", quitIt, true); // stopped in the capture phase
+    // threeA.addEventListener("click", quitIt, false); // stopped in the bubbling phase
+
+    function clickHandler() {
+      console.log("clicked");
+    }
+    function quitIt(e) {
+      console.log("stopped");
+      e.stopPropagation();
+      // e.stopImmediatePropagation(); // Will stop the execution of all handlers on the current element
+    }
+  </script>
+</body>
+
+</html>
+
+<!-- Not all events will bubble up through the DOM. For instance, a focus event does not bubble. There are other events that also don't bubble, for example events fired on the window object (like the load and resize events) or other non-DOM objects like XHRs. -->

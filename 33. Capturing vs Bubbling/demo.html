@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Demo2: Capturing vs Bubbling</title>
+
+  <style>
+    * {
+      margin: 10px;
+      padding: 10px;
+      border: 1px solid black;
+    }
+  </style>
+</head>
+
+<body>
+  <div>DIV
+    <form>FORM
+      <p>P</p>
+    </form>
+  </div>
+
+  <script>
+    for (const DomEL of document.querySelectorAll('*')) {
+      DomEL.addEventListener('click', () => {
+        console.log('Capturing', DomEL.tagName);
+      }, true);
+      DomEL.addEventListener('click', () => {
+        console.log('Bubbling', DomEL.tagName);
+      }, false);
+    }
+  </script>
+</body>
+
+</html>
